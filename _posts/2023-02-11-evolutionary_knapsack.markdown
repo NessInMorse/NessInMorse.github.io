@@ -185,7 +185,7 @@ new chromosome2 CB
 The mutation is done by using XOR on a specific bit, the mutant is only active when a random integer is lower than the mutation chance divided by 2 (it is divided by two because it is called on both chromosomes).
 The table for [XOR](https://en.wikipedia.org/wiki/XOR_gate) works as follows, I will use `G` to represent the gene, `M` to represent the mutation and `O` to represent the new gene:
 | G | M | O |
-|---|---|---|
+|---------|----------|----------|
 | 0 | 0 | 0 |
 | 0 | 1 | 1 |
 | 1 | 0 | 1 |
@@ -204,7 +204,7 @@ I wanted it to be fast, and I believe I have succeeded.
 
 Here are 5 runs of the program. 
 | Time | Allocated memory |
-|------|------------------|
+|-----------|------------------|
 | 0.015967 seconds | 259.176k allocations 11.270 MiB | 
 | 0.028990 seconds | 186.38k allocations 10.168 MiB, 58.26% compilation time | 
 | 0.016459 seconds | 259.77k 11.280 MiB | 
