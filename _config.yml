@@ -19,11 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Projects
-description: Senna van Hoek
+description: Marc Wijnands
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-linkedin_username: sennavanhoek
-github_username:  sennavanhoek
+linkedin_username: marcwijnands
+github_username:  nessinmorse
 show_excerpts: True
 # Build settings
 theme: minima
