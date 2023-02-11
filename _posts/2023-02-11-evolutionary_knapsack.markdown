@@ -6,7 +6,7 @@ permalink: "/knapsack-problem/"
 show_excerpts: True
 ---
 
-Creating a solution for the Knapsack problem by working with Evolution
+Creating a solution for the Knapsack problem by working with Evolution in Julia!
 
 # Background
 The Knapsack problem is a theoretical problem in computer science, where an imaginary traveller finds a great treasure but only holds a knapsack in which only a few valuable items can be inserted - [you can find more about the knapsack problem here](https://en.wikipedia.org/wiki/Knapsack_problem).
