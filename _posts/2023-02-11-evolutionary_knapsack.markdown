@@ -198,6 +198,7 @@ Here we can see that XOR only mutates the output O when M is `1`.
 Since the values and the weights were always chosen randomly there was no _consistent_ result, however, oftentimes it did exceed a value of 4,000. Without exceeding the maximum weight of 2500!
 ![output](https://user-images.githubusercontent.com/56824499/218279636-a9d36b32-09dc-4d04-ae39-5ebf60b886ef.svg)
 
+A surprising thing to see is that the weight sometimes drops, even when the fitness goes up. Such as in generation ~185 and 390.
 
 # Performance
 I wanted it to be fast, and I believe I have succeeded. 
@@ -229,5 +230,5 @@ I ran it with more generations as well, and it seemed to perform at around 60.00
 
 
 # Code
-
+The code of the project can be found [here](https://github.com/NessInMorse/Knapsack_evolution).
 
