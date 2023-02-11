@@ -203,7 +203,8 @@ Since the values and the weights were always chosen randomly there was no _consi
 I wanted it to be fast, and I believe I have succeeded. 
 
 Here are 5 runs of the program. 
-| Time | Allocated memory | 
+| Time | Allocated memory |
+|------|------------------|
 | 0.015967 seconds | 259.176k allocations 11.270 MiB | 
 | 0.028990 seconds | 186.38k allocations 10.168 MiB, 58.26% compilation time | 
 | 0.016459 seconds | 259.77k 11.280 MiB | 
