@@ -42,9 +42,9 @@ We read the chromosome from right to left, so for 42 the first gene is a 0 so it
 
 The genes in this context are our treasures, a 1 signifiies that we attempt to take the treasure, and a 0 signifies we do not take it.
 
-By using integers as representation of our chromosomes, we can use integer operations which are lightyears faster than vector operations in Julia, and we will need that light speed, but I'll get to that in a second.
+By using integers as representation of our chromosomes, we can use integer operations which are lightyears faster than vector operations in Julia, and we will need that light speed so that we can blaze through the simulation, but I'll get to that in a second.
 
-One problem that arises by using integers unfortunately, is that we will be limited by the size of integers of the language and since I was slightly unsure, I did not want to go greater than 64-bit integers.
+One problem that arises by using integers unfortunately, is that we will be limited by the size of integers of the language and since I was unsure, I did not want to go greater than 64-bit integers, as I was scared that some ['unintended behaviour'](https://github.com/JuliaLang/julia/issues/3081) would act up.
 This limit of 64 bits means that the maximum length of the list of treasures will also only be 64.
 So there will only be 2<sup>64</sup> combinations of treasures to take.
 
@@ -120,7 +120,7 @@ These are the values of each of the treasures that can be found.
 | values  | 8, 16, 32, 64 | 1 - 200 | 
 | weights | 8, 16, 32, 64 | 1 - 200 | 
 
-The max_weight was set to 2500, this means that on average, 25 out of 64 items could fit in the knapsack (since on average, any given item would weigh 100)
+The `max_weight` was set to 2500, this means that on average, 25 out of 64 items could fit in the knapsack (since on average, any given item would weigh 100)
 
 | variable | size | 
 |----------|------|
@@ -133,5 +133,100 @@ The max_weight was set to 2500, this means that on average, 25 out of 64 items c
 One of the reasons to make your program branchless is so that is faster, oftentimes at the cost of readability. Branching in code is expensive so we want to avoid it as much as possible.
 And since we are working with predominantly integers (apart from the mutation value). Making the program branchless is not very difficult.
 
+One place where the readability took a great hit was in the `recombine_chromosomes!()` function, where it is a LOT of integer operations.
+```julia
+function recombine_chromosomes!(chromosome_a::Int64,
+                                chromosome_b::Int64,
+                                chromosome_size::Int8,
+                                mutation_chance::Float32)
+        #=
+        Creates new recombinants of the two chromosomes provided
+        Also mutates a single chromosome based on the mutation chanced provided.
+        in:
+                2 chromosomes:  a and b.
+                chromosome_size: a size (in bits) of a chromosome
+                mutation_chance: the chance of a mutation occurring in any gene within the chromosome
+        out:
+                2 recombinant chromosomes. based on the two parents a and b and the mutations.
+        =# 
+        chromatid_length = chromosome_size >> 1
+        offset = 64 - chromatid_length
+
+        chromatid1 = (chromosome_a << offset) >>> offset
+        chromatid2 = (chromosome_a >>> chromatid_length) << chromatid_length
+        
+        
+        chromatid3 = (chromosome_b << offset) >>> offset
+        chromatid4 = (chromosome_b >>> chromatid_length) << chromatid_length
+        
+        new_chromosome1::Int64 = chromatid1 + chromatid4
+        new_chromosome2::Int64 = chromatid2 + chromatid3
+
+        mutant1 = (rand() < (mutation_chance / 2)) * rand(1:chromosome_size)
+        mutant2 = (rand() < (mutation_chance / 2)) * rand(1:chromosome_size)
+
+        
+        new_chromosome1 = new_chromosome1 ⊻ (1 << mutant1)
+        new_chromosome2 = new_chromosome2 ⊻ (1 << mutant2)
+
+
+        return new_chromosome1, new_chromosome2
+end
+```
+
+How the function works is that it quite literally shaves off either the start or end of the integer and then combines it with the other recombinant. So the recombination works as follows:
+```
+chromosome AB
+chromosome CD
+
+new chromosome1 AD
+new chromosome2 CB
+```
+The mutation is done by using XOR on a specific bit, the mutant is only active when a random integer is lower than the mutation chance divided by 2 (it is divided by two because it is called on both chromosomes).
+The table for [XOR](https://en.wikipedia.org/wiki/XOR_gate) works as follows, I will use `G` to represent the gene, `M` to represent the mutation and `O` to represent the new gene:
+| G | M | O |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 | 
+
+Here we can see that XOR only mutates the output O when M is `1`.
+
+
+# Results
+Since the values and the weights were always chosen randomly there was no _consistent_ result, however, oftentimes it did exceed a value of 4,000. Without exceeding the maximum weight of 2500!
+![output](https://user-images.githubusercontent.com/56824499/218279636-a9d36b32-09dc-4d04-ae39-5ebf60b886ef.svg)
+
+
+# Performance
+I wanted it to be fast, and I believe I have succeeded. 
+
+Here are 5 runs of the program. 
+| Time | Allocated memory | 
+| 0.015967 seconds | 259.176k allocations 11.270 MiB | 
+| 0.028990 seconds | 186.38k allocations 10.168 MiB, 58.26% compilation time | 
+| 0.016459 seconds | 259.77k 11.280 MiB | 
+| 0.033262 seconds | 259.38 k allocations: 11.273 MiB, 49.16% gc time | 
+| 0.014795 seconds | 261.44 k allocations: 11.307 MiB | 
+
+
+
+These settings where used:
+| variable | value |
+|----------|-------|
+| population size | 30 |
+| top performers | 4 |
+| mutation rate | 0.03 |
+| generations | 1250 |
+| max weight | 2500 |
+| chromosome size | 64 |
+| value list size | 64 |
+| weight list size | 64 |
+
+I ran it with more generations as well, and it seemed to perform at around 60.000-95.000 generations per second, that is 1,900,000 years of evolution per second!
+
+
+# Code
 
 
