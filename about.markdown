@@ -10,9 +10,14 @@ permalink: /about/
   float: left;
 }
 </style>
-![Senna van Hoek](/assets/glitch.gif){: .image-left }
-# ~$ whoami
-I'm a Dutch cyber security student with a background in bio-informatics.
-In my spare time I mostly work on small electronics and software projects like you will find on this blog, but I also like to participate in CTF.
+![Marc Wijnands](/assets/bash_logo.gif){: .image-left }
+# MetGlu
+I am a Dutch Bioinformatics student who is particularly interested in combining my love for programming, pixel art and biology.
+See the posts in my blog and see if there is something you like!
 
-\- Senna van Hoek
+| Favourite |  Value | 
+|--------------|-----------|
+| Animal | *Lutra Lutra* |
+| Color | Purple  |
+
+\- Marc Wijnands
