@@ -133,7 +133,7 @@ The `max_weight` was set to 2500, this means that on average, 25 out of 64 items
 One of the reasons to make your program branchless is so that is faster, oftentimes at the cost of readability. Branching in code is expensive so we want to avoid it as much as possible.
 And since we are working with predominantly integers (apart from the mutation value). Making the program branchless is not very difficult.
 
-One place where the readability took a great hit was in the `recombine_chromosomes!()` function, where it is a LOT of integer operations.
+One place where the readability took a great hit was in the `recombine_chromosomes!()` function, where a LOT of integer operations are performed.
 ```julia
 function recombine_chromosomes!(chromosome_a::Int64,
                                 chromosome_b::Int64,
