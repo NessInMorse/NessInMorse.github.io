@@ -6,5 +6,5 @@ layout: home
 ---
 
 
-It seemed fun to start a blog, so here it is! I hope you will find something interesting.  
-If you have any questions or suggestions feel free reach out.
+Someone told me it would be fun to start a blog, so I started trying to create some posts.
+Hopefully you can find something of value in here :).
