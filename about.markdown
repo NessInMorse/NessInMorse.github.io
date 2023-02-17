@@ -18,6 +18,10 @@ See the posts in my blog and see if there is something you like!
 | Favourite |  Value | 
 |--------------|-----------|
 | Animal | *Lutra Lutra* |
-| Color | Purple  |
+| Color | Purple |
+| Number | 56 |
+| Art-style | Pixel art |
+| Games | TETRIS, SMITE |
+
 
 \- Marc Wijnands
