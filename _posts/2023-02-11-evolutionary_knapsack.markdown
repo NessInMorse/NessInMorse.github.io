@@ -210,12 +210,11 @@ Here are 5 runs of the program.
 
 | Time | Allocated memory |
 |-----------|------------------|
-| 0.015967 seconds | 259.176k allocations 11.270 MiB | 
-| 0.028990 seconds | 186.38k allocations 10.168 MiB, 58.26% compilation time | 
-| 0.016459 seconds | 259.77k 11.280 MiB | 
-| 0.033262 seconds | 259.38 k allocations: 11.273 MiB, 49.16% gc time | 
-| 0.014795 seconds | 261.44 k allocations: 11.307 MiB | 
-
+| 0.009660 seconds | (33.54 k allocations: 3.059 MiB) |
+| 0.009287 seconds | (33.54 k allocations: 3.061 MiB) |
+| 0.008767 seconds | (33.54 k allocations: 3.059 MiB) | 
+| 0.009702 seconds | (33.54 k allocations: 3.061 MiB) |
+| 0.008395 seconds | (33.54 k allocations: 3.061 MiB) |
 
 
 These settings where used:
@@ -231,7 +230,7 @@ These settings where used:
 | value list size | 64 |
 | weight list size | 64 |
 
-I ran it with more generations as well, and it seemed to perform at around 60.000-95.000 generations per second, that is 1,900,000 years of evolution per second!
+I ran it with more generations as well, and it seemed to perform at around 140,000-145,000 generations per second, that is 2,800,000 years of evolution per second!
 
 
 # Code
