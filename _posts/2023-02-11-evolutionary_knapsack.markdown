@@ -216,6 +216,21 @@ Here are 5 runs of the program.
 | 0.009702 seconds | (33.54 k allocations: 3.061 MiB) |
 | 0.008395 seconds | (33.54 k allocations: 3.061 MiB) |
 
+The details of the benchmark can be found below:
+
+```julia
+BenchmarkTools.Trial: 594 samples with 1 evaluation.
+ Range (min … max):  6.951 ms … 15.460 ms  ┊ GC (min … max): 0.00% … 42.81%
+ Time  (median):     8.172 ms              ┊ GC (median):    0.00%
+ Time  (mean ± σ):   8.391 ms ±  1.244 ms  ┊ GC (mean ± σ):  3.07% ±  8.40%
+
+          ▂▄█▆▂                                               
+  ▂▄▆▅▄▄▄▆██████▅▅▄▄▂▃▂▂▁▂▂▁▂▂▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▃▂▃▂▁▃▂▃ ▃
+  6.95 ms        Histogram: frequency by time        13.6 ms <
+
+ Memory estimate: 3.04 MiB, allocs estimate: 32286.
+ ```
+
 
 These settings where used:
 
