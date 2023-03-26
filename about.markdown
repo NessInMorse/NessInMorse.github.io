@@ -10,7 +10,7 @@ permalink: /about/
   float: left;
 }
 </style>
-![Marc Wijnands](/assets/bash_logo.gif){: .image-left }
+![Marc Wijnands](/assets/colour_circle30-export.gif){: .image-left }
 # MetGlu
 I am a Dutch Bioinformatics student who is particularly interested in combining my love for programming, pixel art and biology.
 See the posts in my blog and see if there is something you like!
