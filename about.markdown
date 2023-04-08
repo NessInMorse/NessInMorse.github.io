@@ -25,7 +25,6 @@ See the posts in my blog and see if there is something you like!
 | Programming language | Julia |
 | Chemical | Oxytocin |
 | Business Theory | Lencioni Pyramid |
-| Art form | pixel art |
 | Mythical creature | Atlas |
 
 
