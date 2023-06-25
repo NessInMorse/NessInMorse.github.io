@@ -19,7 +19,7 @@ Since one of the goals of this project was to make a genome assembler that could
 
 | genome assembly method | pros | cons |
 |------------------------|------|------|
-| _de novo_ | unique links, truer information | computer intensive, slow |
+| _de novo_ | unique links, _truer_ information | computer intensive, slow |
 | reference guided | highly performant, is able to perform variant calling more easily | needs a reference, wrong references leads to wrong results.
 
 
@@ -64,4 +64,4 @@ Average GC%:			 40.86%
 The quality was also plotted in the QC-plot which can be found in figure 1. This figure broadly shows all the different qualities that could be found on each of the different positions, with their minimum, maximum, Q1, median & Q3-values being shown. 
 
 _Figure 1_: The QC-plot. It shows the Minimum, maximum, Q1, Q3 and median values for each read position (in case the position has more than a thousand reads). Notice how the quality of the reads steeply increases in the first 10-100 bases. After 20k bases, the read length becomes a little more inconsistent and therefore all the values fluctuate on their qualities.
-[read_qc_plot](/assets/sea_otter.png){: .image-left }
+![read_qc_plot](/assets/S_ruminantium_readqc.png){: .image-left }
