@@ -65,3 +65,30 @@ The quality was also plotted in the QC-plot which can be found in figure 1. This
 
 _Figure 1_: The QC-plot. It shows the Minimum, maximum, Q1, Q3 and median values for each read position (in case the position has more than a thousand reads). Notice how the quality of the reads steeply increases in the first 10-100 bases. After 20k bases, the read length becomes a little more inconsistent and therefore all the values fluctuate on their qualities.
 ![read_qc_plot](/assets/S_ruminantium_readqc.png){: .image-left }
+
+The general view of the VCF-file can also be found in the VCF-analysis text file.
+Which shows the SNP and INDEL mutations in the VCF-file.
+
+An example output can be found in codeblock 2. In this example we can see that, on average, there are 3 deletions per insertion in our sequences compared to the reference.
+
+_Codeblock 2_: The example VCF-file on the _S ruminantium_. It possible to view the insertions, deletions, the indel-rate and the different SNP-mutations.
+```
+Insert count: 18
+Deletion count: 54
+INDEL-score; Insertion : deletion,  1 : 3.0
+Mutations:
+ 				FROM
+	--------------------------------------------------
+		|	A	C	G	T
+		|	----------------------------------
+		| A	0	16	40	28
+	TO	| C	6	0	5	71
+		| G	77	5	0	10
+		| T	9	55	16	0
+```
+
+There was also an analysis of the VCF-file in a plot. This can be found in figure 2. In this heatmap plot it shows the relative SNP mutation on each of the contigs of the reference. Only 16 contigs could be loaded onto a single image. This means that there will be `ceil(n / 16)` plots with a minimum of 1. Showing the SNP mutations per contig.
+
+_Figure 2_: The heatmap VCF-plot which shows all the relative counts of the SNP mutations in each of the contigs. Since the _S ruminantium_ had only a single contig with its entire genome. There was only one heatmap filled in the 4*4 grid of heatmaps.
+![VCF heatmap](/assets/VCF-heatmap.png){: .image-left }
+
