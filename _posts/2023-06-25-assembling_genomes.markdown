@@ -117,6 +117,22 @@ These were the results for a single particular run:
 
 It should be stated that most of this time is downloading the reads and the reference, mapping these references and then creating the vcf-file from the bam-file.
 
+The measurements of each of the julia scripts can be found in table 2. From this, we can conclude that the julia scripts that were added to the pipeline did not alter the overall performance of the pipeline greatly, while also adding clearer insight into the data of that the pipeline provided.
+
+_table 2_: Time measurements of each of the julia scripts that were added to the LOTRAP pipeline. Notice how the VCF-analysis script is noticably faster than a second, and how the fastq analyser plot is the only julia script that runs for longer than a minute.
+
+| script | time (s) |
+|--------|----------|
+| analyser.jl | 9.286s |
+| fastq_analyser_plot.jl | 132.301s |
+| vcf_analysis.jl | 0.004s |
+| vcf_plot.jl | 7.072s |
+| sum | 148.664s |
+
+
+
+
+
 By having created this pipeline, it has become possible for an average bioinformatician with a laptop with at least enough RAM, to perform the initial assemblation step of bio-informatics and analysis of the data sequence files.
 
 The original code for this project can be found [here](https://github.com/NessInMorse/LOTRAP). When the pipeline is updated, the blog post will be updated as well with the new information.
