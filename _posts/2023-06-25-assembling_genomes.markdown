@@ -70,7 +70,7 @@ _Figure 1_: The QC-plot. It shows the Minimum, maximum, Q1, Q3 and median values
 The general view of the VCF-file can also be found in the VCF-analysis text file.
 Which shows the SNP and INDEL mutations in the VCF-file.
 
-An example output can be found in codeblock 2. In this example we can see that, on average, there are 3 deletions per insertion in our sequences compared to the reference.
+An example output can be found in codeblock 2. In this example we can see that, on average, there are 3 deletions per insertion in our sequences when compared to the reference.
 
 _Codeblock 2_: The example VCF-file on the _S ruminantium_. It possible to view the insertions, deletions, the indel-rate and the different SNP-mutations.
 ```
@@ -95,13 +95,16 @@ _Figure 2_: The heatmap VCF-plot which shows all the relative counts of the SNP 
 
 # Performance
 As earlier stated, the following data was used in testing the pipeline:
+
 | input file | size |
 |------------|------|
 | reads ([DRR481114](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=DRR481114&display=metadata)) | 1.5 Gb |
 | reference ([NZ_AP018400.1](https://www.ncbi.nlm.nih.gov/nuccore/NZ_AP018400.1)) | 2.1 Mb |
 
 Using the following commando on the Swift 3 SF314-41:
+
 `time snakemake --cores 8 --snakefile Snakefile --use-conda all -F`
+
 forcing the snakemake pipeline to be run from start to finish, using the conda environment and having 8 cores to its disposal while also timing the duration of the run.
 
 These were the results for a single particular run:
@@ -113,3 +116,7 @@ These were the results for a single particular run:
 | sys | 23m 07s |
 
 It should be stated that most of this time is downloading the reads and the reference, mapping these references and then creating the vcf-file from the bam-file.
+
+By having created this pipeline, it has become possible for an average bioinformatician with a laptop with at least enough RAM, to perform the initial assemblation step of bio-informatics and analysis of the data sequence files.
+
+The original code for this project can be found [here](https://github.com/NessInMorse/LOTRAP). When the pipeline is updated, the blog post will be updated as well with the new information.
