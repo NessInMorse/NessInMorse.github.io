@@ -36,6 +36,7 @@ A few characteristics that have been added to the pipeline are the following:
 * General overview of the VCF-file in a text-file
 * Analysis of the VCF-file with heatmaps per contig
 
+# Results
 
 The following data were all results from the assembly of the _Streptococcus ruminantium_, since this organism was easy to perform assembly on, with quick feedback loops.
 
@@ -92,3 +93,23 @@ There was also an analysis of the VCF-file in a plot. This can be found in figur
 _Figure 2_: The heatmap VCF-plot which shows all the relative counts of the SNP mutations in each of the contigs. Since the _S ruminantium_ had only a single contig with its entire genome. There was only one heatmap filled in the 4*4 grid of heatmaps.
 ![VCF heatmap](/assets/VCF-heatmap.png){: .image-left }
 
+# Performance
+As earlier stated, the following data was used in testing the pipeline:
+| input file | size |
+|------------|------|
+| reads ([DRR481114](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=DRR481114&display=metadata)) | 1.5 Gb |
+| reference ([NZ_AP018400.1](https://www.ncbi.nlm.nih.gov/nuccore/NZ_AP018400.1)) | 2.1 Mb |
+
+Using the following commando on the Swift 3 SF314-41:
+`time snakemake --cores 8 --snakefile Snakefile --use-conda all -F`
+forcing the snakemake pipeline to be run from start to finish, using the conda environment and having 8 cores to its disposal while also timing the duration of the run.
+
+These were the results for a single particular run:
+
+| measurement-type | time to completion (mm ss) |
+|------------------|--------------------|
+| real | 71m 54s|
+| user | 51m 29s |
+| sys | 23m 07s |
+
+It should be stated that most of this time is downloading the reads and the reference, mapping these references and then creating the vcf-file from the bam-file.
