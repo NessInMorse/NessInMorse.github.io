@@ -33,6 +33,7 @@ A few characteristics that have been added to the pipeline are the following:
 * All of the output files are stored in separate folders per category
 * General overview of the fastq-reads file in a text-file
 * Analysis of the quality per base in the reads file
+* Analysis of the GC-distribution of the sequences
 * General overview of the VCF-file in a text-file
 * Analysis of the VCF-file with heatmaps per contig
 
@@ -44,8 +45,8 @@ The input file of the reads was 1.5Gb, and the reference was 2.1Mb.
 
 | input file | size |
 |------------|------|
-| reads ([DRR481114](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=DRR481114&display=metadata)) | 1.5 Gb |
-| reference ([NZ_AP018400.1](https://www.ncbi.nlm.nih.gov/nuccore/NZ_AP018400.1)) | 2.1 Mb |
+| reads ([DRR481114](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=DRR481114&display=metadata)) | 1.5 GB |
+| reference ([NZ_AP018400.1](https://www.ncbi.nlm.nih.gov/nuccore/NZ_AP018400.1)) | 2.1 MB |
 
 
 The `head -6` can be found in the codeblock 1. Here it shows the read count, average length of reads, minimum length of reads (which surprisingly turned out to be zero), maximum length of reads, the average quality of reads and the average GC%. This particular script is the `analyser.jl` script, which took around 10s to run on this data, results of performance may vary due to incosistent read lengths.
@@ -66,6 +67,11 @@ The quality was also plotted in the QC-plot which can be found in figure 1. This
 
 _Figure 1_: The QC-plot. It shows the Minimum, maximum, Q1, Q3 and median values for each read position (in case the position has more than a thousand reads). Notice how the quality of the reads steeply increases in the first 10-100 bases. After 20k bases, the read length becomes a little more inconsistent and therefore all the values fluctuate on their qualities.
 ![read_qc_plot](/assets/S_ruminantium_readqc.png){: .image-left }
+
+Besides the QC-plot there was also a GC-distribution plot, which labeled each of the sequences in buckets. The distribution of each of the percentages was then plotted. This plot can show contamination in the data, when there is a double peak found in the dataset. In the example case with the data from the lutra lutra, this was not the case, the plot showed a curve similar to that of the bell curve, meaning that the data was not likely to be contaminated.
+
+_Figure 2_: The GC-distribution plot of the example _Lutra lutra_ dataset. Here it shows a curve similar to that of a bell curve, signifying there was no significant contamination of foreign DNA in the dataset that was provided.
+![read_gc_plot](/assets/lutra_lutra_gc_distribution.png){: .image-left }
 
 The general view of the VCF-file can also be found in the VCF-analysis text file.
 Which shows the SNP and INDEL mutations in the VCF-file.
@@ -117,22 +123,21 @@ These were the results for a single particular run:
 
 It should be stated that most of this time is downloading the reads and the reference, mapping these references and then creating the vcf-file from the bam-file.
 
-The measurements of each of the julia scripts can be found in table 2. From this, we can conclude that the julia scripts that were added to the pipeline did not alter the overall performance of the pipeline greatly, while also adding clearer insight into the data of that the pipeline provided.
+The measurements of each of the julia scripts can be found in table 2. From this, we can conclude that the julia scripts that were added to the pipeline did not alter the overall performance of the pipeline greatly, while also adding clearer insight into the data of that the pipeline provided. For the _Lutra lutra_ part of the pipeline, it took around 24 hours to create the VCF-file. The VCF-file is therefore a lot (32x) bigger than the _Streptococcus ruminantium_ version. This in turn also increased the time that the scripts needed to run for.
 
-_table 2_: Time measurements of each of the julia scripts that were added to the LOTRAP pipeline. Notice how the VCF-analysis script is noticably faster than a second, and how the fastq analyser plot is the only julia script that runs for longer than a minute.
+_table 2_: Time measurements of each of the julia scripts that were added to the LOTRAP pipeline. Notice how the VCF-analysis script is noticably faster than a second.
 
-| script | time (s) |
-|--------|----------|
-| analyser.jl | 9.286s |
-| fastq_analyser_plot.jl | 132.301s |
-| vcf_analysis.jl | 0.004s |
-| vcf_plot.jl | 7.072s |
-| sum | 148.664s |
-
-
-
-
+| script | time (s) (_Streptococcus ruminantium_; reads: 1.5 GB; vcf: 91.2 kB) | time (s) (_Lutra Lutra_; reads: 18.7 GB; vcf: 2.9 MB) |
+|--------|---------------------------------------------------------------------|-----------------------------------------------------|
+| analyser.jl | 9.286s | 113.856s |
+| fastq_analyser_plot.jl | 132.301s | 563.646s |
+| vcf_analysis.jl | 0.004s | 0.034s |
+| vcf_plot.jl | 7.072s | 8.612s | 
+| sum | 148.664s | 686.148s |
 
 By having created this pipeline, it has become possible for an average bioinformatician with a laptop with at least enough RAM, to perform the initial assemblation step of bio-informatics and analysis of the data sequence files.
 
 The original code for this project can be found [here](https://github.com/NessInMorse/LOTRAP). When the pipeline is updated, the blog post will be updated as well with the new information.
+
+# Addendum 
+I have a suspicion after running the pipeline with the 18.7 GB reads from the lutra lutra that the time complexity of the pipeline does not scale in a linear fascion. Which would mean that it is not recommended to use this pipeline on very grand scale projects where time is costly, and the weekends can not be used to finish pipelines. Consequently, running the pipeline on your daily driver should only be recommended on small datasets.
