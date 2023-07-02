@@ -95,9 +95,9 @@ Mutations:
 		| T	9	55	16	0
 ```
 
-There was also an analysis of the VCF-file in a plot. This can be found in figure 2. In this heatmap plot it shows the relative SNP mutation on each of the contigs of the reference. Only 16 contigs could be loaded onto a single image. This means that there will be `ceil(n / 16)` plots with a minimum of 1. Showing the SNP mutations per contig.
+There was also an analysis of the VCF-file in a plot. This can be found in figure 3. In this heatmap plot it shows the relative SNP mutation on each of the contigs of the reference. Only 16 contigs could be loaded onto a single image. This means that there will be `ceil(n / 16)` plots with a minimum of 1. Showing the SNP mutations per contig.
 
-_Figure 2_: The heatmap VCF-plot which shows all the relative counts of the SNP mutations in each of the contigs. Since the _S ruminantium_ had only a single contig with its entire genome. There was only one heatmap filled in the 4*4 grid of heatmaps.
+_Figure 3_: The heatmap VCF-plot which shows all the relative counts of the SNP mutations in each of the contigs. Since the _S ruminantium_ had only a single contig with its entire genome. There was only one heatmap filled in the 4*4 grid of heatmaps.
 ![VCF heatmap](/assets/VCF-heatmap.png){: .image-left }
 
 # Performance
@@ -129,6 +129,7 @@ The measurements of each of the julia scripts can be found in table 2. From this
 For the Lutra lutra dataset the following data was used:
 
 | input file | size |
+|------------|------|
 | reads ([ERR3313341](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR3313341&display=metadata)) | 18.7 GB |
 | reference ([taxid: 9657](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9657/)) | 2.5 GB | 
 
