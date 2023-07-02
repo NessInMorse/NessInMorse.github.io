@@ -71,6 +71,7 @@ _Figure 1_: The QC-plot. It shows the Minimum, maximum, Q1, Q3 and median values
 Besides the QC-plot there was also a GC-distribution plot, which labeled each of the sequences in buckets. The distribution of each of the percentages was then plotted. This plot can show contamination in the data, when there is a double peak found in the dataset. In the example case with the data from the lutra lutra, this was not the case, the plot showed a curve similar to that of the bell curve, meaning that the data was not likely to be contaminated.
 
 _Figure 2_: The GC-distribution plot of the example _Lutra lutra_ dataset. Here it shows a curve similar to that of a bell curve, signifying there was no significant contamination of foreign DNA in the dataset that was provided.
+
 ![read_gc_plot](/assets/lutra_lutra_gc_distribution.png){: .image-left }
 
 The general view of the VCF-file can also be found in the VCF-analysis text file.
@@ -125,6 +126,12 @@ It should be stated that most of this time is downloading the reads and the refe
 
 The measurements of each of the julia scripts can be found in table 2. From this, we can conclude that the julia scripts that were added to the pipeline did not alter the overall performance of the pipeline greatly, while also adding clearer insight into the data of that the pipeline provided. For the _Lutra lutra_ part of the pipeline, it took around 24 hours to create the VCF-file. The VCF-file is therefore a lot (32x) bigger than the _Streptococcus ruminantium_ version. This in turn also increased the time that the scripts needed to run for.
 
+For the Lutra lutra dataset the following data was used:
+
+| input file | size |
+| reads ([ERR3313341](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR3313341&display=metadata)) | 18.7 GB |
+| reference ([taxid: 9657](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9657/)) | 2.5 GB | 
+
 _table 2_: Time measurements of each of the julia scripts that were added to the LOTRAP pipeline. Notice how the VCF-analysis script is noticably faster than a second.
 
 | script | time (s) (_Streptococcus ruminantium_; reads: 1.5 GB; vcf: 91.2 kB) | time (s) (_Lutra Lutra_; reads: 18.7 GB; vcf: 2.9 MB) |
@@ -140,4 +147,4 @@ By having created this pipeline, it has become possible for an average bioinform
 The original code for this project can be found [here](https://github.com/NessInMorse/LOTRAP). When the pipeline is updated, the blog post will be updated as well with the new information.
 
 # Addendum 
-I have a suspicion after running the pipeline with the 18.7 GB reads from the lutra lutra that the time complexity of the pipeline does not scale in a linear fascion. Which would mean that it is not recommended to use this pipeline on very grand scale projects where time is costly, and the weekends can not be used to finish pipelines. Consequently, running the pipeline on your daily driver should only be recommended on small datasets.
+I have a suspicion after running the pipeline with the 18.7 GB reads from the lutra lutra that the time complexity of the pipeline does not scale in a linear fascion, specifically the creation of the VCF-file exploded in time from around 5 minutes to 24 hours. Which would mean that it is not recommended to use this pipeline on very grand scale projects where time is costly, and the weekends can not be used to finish pipelines. Consequently, running the pipeline on your daily driver should only be recommended on small datasets.
