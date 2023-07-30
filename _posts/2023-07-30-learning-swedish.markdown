@@ -184,3 +184,30 @@ Besides that, I have been able to rack up 7.700 XP in my NS2000 program, learnin
 I have been able to read 103/224 pages of the short stories at A2-B1 level. And 15/1151 pages out of _Nils Holgerssons underbara resa genom Sverige_.
 
 With 399 days ahead of me, I look forward to try and learn the language to the best of my abilities making strides each day. Ever-moving towards my goal of language proficiency.
+
+# Addendum
+
+## Code
+
+The code for [NS2000](https://github.com/NessInMorse/NS2000) can be found [here](https://github.com/NessInMorse/NS2000).
+
+## Reading list
+
+* [Atomic Habits](https://www.bol.com/nl/nl/p/atomic-habits/9200000075132383/?bltgh=mlvZ2gUOo-hGy0V1mslOmw.2_18.19.ProductImage)
+* [Can't hurt me](https://www.bol.com/nl/nl/p/can-t-hurt-me/9200000100577501/?bltgh=nv-PYCYMQFhfoqqgiIlKFA.2_6.7.ProductImage)
+
+## Swedish Literary works
+
+* [Nils Holgerssons underbara resa genom Sverige](https://www.bol.com/nl/nl/p/nils-holgerssons-underbara-resa-genom-sverige/9200000131559481/?bltgh=ssEMenGTrYhHt2Owmd9G9g.2_6.7.ProductImage)
+* [Short Stories in Swedish for Beginners](https://www.bol.com/nl/nl/p/short-stories-in-swedish-for-beginners-read-for-pleasure-at-your-level-expand-your-vocabulary-and-learn-swedish-the-fun-way-foreign-language-graded-reader-series/9200000116879728/?bltgh=jQBAXQNfphPzWSZr8UxAuA.2_6.7.ProductImage)
+* [Penguin rumble](http://www.penguinrumble.se)
+
+## Other sources
+
+* [Duolingo](https://www.duolingo.com/)
+* [Duome](https://duome.eu/)
+* [Tandem](https://www.tandem.net)
+* [Pinhok](https://www.bol.com/nl/nl/p/leer-zweeds-snel-gemakkelijk-efficient/9300000042356612/?bltgh=v4xZ0LTiJhRS-nSGO7FHtg.2_6.7.ProductImage)
+* [ANWB toeristenkaart](https://www.bol.com/nl/nl/p/anwb-toeristenkaart-zweeds/1001004006850353/?bltgh=g337HYAD3BQ53rulDcpPGg.2_6.7.ProductImage)
+* [Basiscursus Zweeds](https://www.bol.com/nl/nl/p/basiscursus-zweeds-1-leerlingenboek/666853238/?bltgh=oDd0jIVQMi5ZczKzboFBvQ.2_11.12.ProductImage)
+
