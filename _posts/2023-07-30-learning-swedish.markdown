@@ -31,7 +31,7 @@ Language has a _lot_ of layers to it, and I am not even an expert. There are 4 d
 
 Each of these layers should be tackled separately, one important point to make is that speaking levels up all the other skills to that level, since the user is able to make their own sentences on the fly and being able to communicate them to someone else, reacting on the situation.
 
-And my dumbass brain thought it would be enough to just use Duolingo every day to passively pick up the language - I was wrong, dead wrong in fact. And I am glad that you pointed that out Suzanna.
+And my dumbass brain thought it would be enough to just use Duolingo every day to passively pick up the language - I was wrong, dead wrong in fact. And I am glad that you pointed that out Suzanna💖.
 
 Duolingo only tackles reading and writing for the most part, yeah, it has the listening and speaking exercises, but it doesn't ask you to create entirely new sentences based on ideas, an app would not be suffice for that. Besides that, the heart system is also quite annoying, being only able to make 5 mistakes a day, watching ads, and doing more exercises to gain back hearts is getting quite repetitive and boring after 90 days.
 
@@ -158,11 +158,13 @@ Below here is a table with examples of how you can employ these strategies into 
 One thing that Duolingo is particularly good for, is creating habits. It has challenge, XP, following friends, daily reminders on your phone and it really likes to overstate how important it is in language learning, and how important it is to keep up your streak and learn a language. Quite the narritive. I do use Duolingo, I do not think it is a particularly bad app of any kind, not at all. It is a good app to start your language journey on, with other language tools that were also referenced earlier. 
 Duolingo is excellent for creating a habit, so we start the day off with Duolingo, and we consistently finish 1 entire course a day (1/9th of an average unit), every day is a circle on our roadmap. On holidays I tend to prefer to finish 2 entire courses a day. Meaning that we have 2 circles filled with delicious gold every day. Using this, I have been able to finish around 116/325 lessons in 90 days; with an average of 245 XP per day. Having a vocabulary (according to Duolingo anyway) of just over a thousand words, I would take this with a grain of salt, Duolingo is often more of a game, and I tend to not want to lose any of my hearts too quickly.
 
+[duo_screenshot](duo_screenshot.png){: .image-left }
+
 Since 3 weeks, I have also added the 2000 vocabulary word list to my daily habit, of which I perform one new course each day, resulting in learning 25 new words on the daily. Which means that I have now learned 575 words using this method. I have made it more satisfying using similar techniques as Duolingo, the UI is that of a terminal, yet I was able to convey satisfying corrections and states of correctness by having red and green text, and purple text for the courses. The NS2000 program also has a script to provide insight(.jl) into the results which get written to a `progress.tsv`. Making it possible to make plots such as: 
 
-plot1
+[xp_plot](xp.png){: .image-left }
 and
-plot2
+[progress](progress.png){: .image-left }
 
 Showing the user how much they have progressed each day with the XP count, and the compound of their experience in both words and experience in the language.
 Writing the program was also quite satisfying, since the pieces fit perfectly together, and the end product is quite nice to use for a terminal program. Making it possible to run on any laptop with an IDE.
@@ -175,8 +177,8 @@ Finally, reading, I tend to right during the bedtime hours, it makes my dreams a
 
 
 # Conclusion
-With my current habits, I have been able to learn 1031/2361 words of the Duolingo course, with 22_048 XP in 90 days. 
-Besides that, I have been able to rack up 7_700 XP in my NS2000 program, learning 575/2000 words in 22 days, and getting closer to that goal of 2000 words each day.
+With my current habits, I have been able to learn 1031/2361 words of the Duolingo course, with 22.048 XP in 90 days. 
+Besides that, I have been able to rack up 7.700 XP in my NS2000 program, learning 575/2000 words in 22 days, and getting closer to that goal of 2000 words each day.
 I have been able to read 103/224 pages of the short stories at A2-B1 level. And 15/1151 pages out of _Nils Holgerssons underbara resa genom Sverige_.
 
 With 399 days ahead of me, I look forward to try and learn the language to the best of my abilities making strides each day. Ever-moving towards my goal of language proficiency.
