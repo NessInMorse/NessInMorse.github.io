@@ -8,7 +8,7 @@ show_excerpts: True
 
 Learning a new language, one step at a time.
 
-# The Beginning
+## How it started
 
 It was May 1st 2023. I would go on a study trip with my peers. I shouldn't say I was stoked for this study trip, I was still in winter blues and hoped this study trip would at least get me out of the house for a little while. I had heard that the country we would be going to is quite a cool and chilly place with a lot of nature. Though when was looking outside of the small window plane: it clicked for me. It look gorgeous, even though it was only through a slither of light that I was able to view the beautiful Swedish landscape that captured me with its high trees and farmlike houses. I needed this space to go out. I wanted to run outside of the plane as quickly as possible and when we finally got off the plane, I was hit by the language. Something that was a little too different to just read, things such as _flygplats_ and _utgång_. And so, I was in dire need of a dictionary. Unfortunately, as my luck would have it, no bookstore was open, and the ones that were, did not have a English to Swedish dictionary. Nearing the end of the day I was able to pick up a peculiar _Manga_-like comic called [Penguin rumble](http://www.penguinrumble.se) it looked adorable, and would be able to combine my language learning with things I already enjoyed. And so, while being tired after walking through the old parts of the city Gamla Stan (=_gammal_ means old) but not without determination to start learning this new language I went to bed.
 
@@ -23,7 +23,7 @@ After coming back to the Netherlands, I was never seen as excited to ever come b
 
 And so, my learning journey began, with 484 days left on the clock before had the possibility of studying there.
 
-# The plan & Different learning platforms
+## The plan & Different learning platforms
 
 Learning a new language can be a daunting task, in my life I have had to learn: Dutch, English, French, German, Old Greek and Latin. And unfortunately, none of them, apart from Dutch and English stuck. Only some vocabulary from French pops up in my head sometimes. _Malheureusement_. 
 Prior to this year I had tried to learn Japanese, but the Kanji and trying to read anything other than the roman alfabet had proven too difficult to me, or at least, I did not want to work at it anymore. 
@@ -46,7 +46,7 @@ While this is a valid strategy, it is not the fastest, sine our brain likes to c
 A faster way to perform this task is by first deploying all characters, and then, deploy all numbers:
 abcdef
 1, 2, 3, 4, 5, 6...
-Conveying this message via written words is quite difficult, but you'll notice yourself that this is the case when doing the task yourself.
+Conveying this message via written words is quite difficult, but you'll notice yourself that what I am trying to convey is true when you attempt to do this yourself.
 Now how does this tie in with the vocabulary program? Well, Teach2000 and WRTS (even worse so) enforced users to go like this:
 
 ```
@@ -56,7 +56,7 @@ han=he
 hon=she
 etc.
 ```
-Constantly swapping between the two languages, really annoying, WRTS was a website only service as far as I was concerned, it had worse settings too and some odd premium subscription deal. Anyway, even by perhaps doing, 
+Constantly swapping between the two languages can get quite tiresome, WRTS was a website only service as far as I was concerned, it had worse settings too and some odd premium subscription deal. Anyway, even by perhaps doing, 
 
 ```
 jag=
@@ -69,7 +69,7 @@ First, you have to navigate continuously through the file, losing time - I am aw
 
 So how did we fix it?
 
-Quite easily, using two files: Now each of the lines corresponds to the other. 
+Quite easy, using two files: Now each of the lines corresponds to the other. 
 
 ```
 jag
@@ -96,9 +96,9 @@ her
 we #<== this is where the second course starts
 ```
 
-And so, easily, a lot of words can be typed, it would surprise you how fast you can type words in a booklet in your mother tongue in a file like this. Often being able to have multiple words in your purple RAM blob.
+And so, a lot of words can be typed out rather quickly, it would surprise you how fast you can type words in a booklet in your mother tongue in a file like this. Your brain usually gets to optimizing and stores multiple words in the last immediately in your brain to reproduce them onto the keyboard.
 
-One of the possible mistakes are INDELS (Inserts and deletions) meaning that the different lines are misaligned, though this shouldn't pose too big of a problem, since it is possible to check the linecount in any editor to see if the words are aligned, and if they are mismatched, real life binary search can be performed to see where the first word is lower or higher in the wordlist, it is kind of its own little game.
+One of the possible gripes about the new file format are so-called INDELS (Inserts and deletions) meaning that the different lines are misaligned, though this shouldn't pose too big of a problem, since it is possible to check the linecount in any editor to see if the words are aligned, and if they are mismatched, real life binary search can be performed to see where the first word is lower or higher in the wordlist, it is kind of its own little game.
 With this method, I learn 25 new words everyday, and doing 25 words of the day prior. Ever building the vocabulary. As of today, I have learned 575 Swedish words using this method.
 
 The third way of learning is using [Tandem](https://www.tandem.net). It can be quite the hassle, since it is like the dating scene all over again. Not a lot of people respond, but the moment you find a buddy you will be good to go, asking all the questions you wish to ask to the native speaker. The app also has built-in ways to correct someone and call. Similar of which can be found in Teams, WhatsApp & Discord. Thanks to a single person - thank you John 🤍- I have learned for example that, single-word exclamations such as, "cool!" (=_häftig_), or "...boring" (=_tråkig_) are always in the third person neutral, meaning that it is actually _tråkigt_ & _häftigt_. Other things such as _talar_, which Duolingo really liked to use, turns out not to be the common way to say "speak" often, people use _pratar_ in stead. It the corrections and the ability to speak to someone that has experience in the language, often wanting to learn new things in the languages you speak too, that makes it such a pleasant experience the moment you find a good buddy to learn languages with.
@@ -118,7 +118,7 @@ Figure 1: All the difference methods that I use in order to become more familiar
 
 ![Swedish Journey](/assets/swedish_journey.png){: .image-left }
 
-# Make it a habit
+## Make it a habit
 
 In order to make it stick, I needed to abuse a few systems in the brain. One of which is that the brain tends to make the easiest decision in its vicinity. So trying to learn a language on motivation alone is going to make you feel miserable after 3 weeks, and then quitting because there was no progress, no satisfaction, and it just got too hard. Is there a way we can use this to our advantage?
 _Yes we can!_ We start the day with our new little habit. Using our alarm clocks, we can choose at what time we wake ourselves, and at what time we will do our habits, so we can make sure that our future selves is more easily able to perform the important task of learning daily, and luckily we are usually not very tired after a good night's sleep; making it possible for us to immediately let our trap loose and make sure we immediately start on learning. Each. And. Every. Day.
@@ -162,11 +162,12 @@ Duolingo is excellent for creating a habit, so we start the day off with Duoling
 
 Since 3 weeks, I have also added the 2000 vocabulary word list to my daily habit, of which I perform one new course each day, resulting in learning 25 new words on the daily. Which means that I have now learned 575 words using this method. I have made it more satisfying using similar techniques as Duolingo, the UI is that of a terminal, yet I was able to convey satisfying corrections and states of correctness by having red and green text, and purple text for the courses. The NS2000 program also has a script to provide insight(.jl) into the results which get written to a `progress.tsv`. Making it possible to make plots such as: 
 
-![xp_plot](/assets/xp.png){: .image-left }
+{% include xp.html %}
 
 &
 
-![progress](/assets/progress.png){: .image-left }
+{% include progress.html %}
+
 
 Showing the user how much they have progressed each day with the XP count, and the compound of their experience in both words and experience in the language.
 Writing the program was also quite satisfying, since the pieces fit perfectly together, and the end product is quite nice to use for a terminal program. Making it possible to run on any laptop with an IDE.
@@ -178,31 +179,31 @@ Next, trying to make Tandem stick is a bit more difficult since it is reliant on
 Finally, reading, I tend to right during the bedtime hours, it makes my dreams a lot more hectic, and I am all there for it, reading a lot also tends to make me sleepier, so I think that is a good sign. So reading Swedish before going to sleep makes me sleepy and at the same time excited by learning new things. A true win-win. 
 
 
-# Conclusion
+## Conclusion
 With my current habits, I have been able to learn 1031/2361 words of the Duolingo course, with 22.048 XP in 90 days. 
 Besides that, I have been able to rack up 7.700 XP in my NS2000 program, learning 575/2000 words in 22 days, and getting closer to that goal of 2000 words each day.
 I have been able to read 103/224 pages of the short stories at A2-B1 level. And 15/1151 pages out of _Nils Holgerssons underbara resa genom Sverige_.
 
 With 399 days ahead of me, I look forward to try and learn the language to the best of my abilities making strides each day. Ever-moving towards my goal of language proficiency.
 
-# Addendum
+## Addendum
 
-## Code
+# Code
 
 The code for [NS2000](https://github.com/NessInMorse/NS2000) can be found [here](https://github.com/NessInMorse/NS2000).
 
-## Reading list
+# Reading list
 
 * [Atomic Habits](https://www.bol.com/nl/nl/p/atomic-habits/9200000075132383/?bltgh=mlvZ2gUOo-hGy0V1mslOmw.2_18.19.ProductImage)
 * [Can't hurt me](https://www.bol.com/nl/nl/p/can-t-hurt-me/9200000100577501/?bltgh=nv-PYCYMQFhfoqqgiIlKFA.2_6.7.ProductImage)
 
-## Swedish Literary works
+# Swedish Literary works
 
 * [Nils Holgerssons underbara resa genom Sverige](https://www.bol.com/nl/nl/p/nils-holgerssons-underbara-resa-genom-sverige/9200000131559481/?bltgh=ssEMenGTrYhHt2Owmd9G9g.2_6.7.ProductImage)
 * [Short Stories in Swedish for Beginners](https://www.bol.com/nl/nl/p/short-stories-in-swedish-for-beginners-read-for-pleasure-at-your-level-expand-your-vocabulary-and-learn-swedish-the-fun-way-foreign-language-graded-reader-series/9200000116879728/?bltgh=jQBAXQNfphPzWSZr8UxAuA.2_6.7.ProductImage)
 * [Penguin rumble](http://www.penguinrumble.se)
 
-## Other sources
+# Other sources
 
 * [Duolingo](https://www.duolingo.com/)
 * [Duome](https://duome.eu/)
