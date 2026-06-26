@@ -173,7 +173,7 @@ To see to which extend the Julia implementation is functionable on weaker hardwa
 # Background on Hardware
 Hardware configurations
 
-| CPU (threads, cores)  | RAM | Single Core Performance |
+| CPU (threads, cores)  | RAM (GB) | Single Core Performance (CPU benchmark) |
 |-------|-----|------------|
 | Intel i5-8400 (6, 6) | 40  | 2367   |
 | Intel i5-10210U (8, 4)  | 36  | 2115   |
