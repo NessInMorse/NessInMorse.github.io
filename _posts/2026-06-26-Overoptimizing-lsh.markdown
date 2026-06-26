@@ -15,11 +15,9 @@ Finding similar users in a large matrix efficiently with low memory and time foo
 The original description of the objective is to find optimal values for the so-called rows and band values which are used to create the signature matrix.
 Using these optimized values, return the number of pairs with a [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index) (JC) of $>0.5$ one can find using this algorithm within 30 minutes on the dataset with an 'average' computer with 8GB of RAM.
 
-```
 $$
 \text{Jaccard Similarity} = \frac{A \cap B}{A \cup B}
 $$
-```
 
 # The data
 The data for this project has users and movies, and the goal is to find as many pairs of users that have a Jaccard Similarity (of watching movies) of >0.5.
@@ -73,11 +71,9 @@ For 100 users and 1,000 movies, this means looping over 100,000 values for each 
 This is pretty wasteful since only a single value needs to be returned for each user per permutation, and as long as the same value would have been returned by the "algorithm" it can be replaced by something better.
 Here we abuse some feature of the data, and also probability theory, in particular with the following: given a list of $x$ positives and $y$ negatives, what is the probability of finding a single positive value after $i$ iterations?
 
-```
 $$
 1 - (\frac{y-(i-1)-x}{y-(i-1)})^i
 $$
-```
 
 For 17770 movies, and a user with 300 movies watched (the minimum), there is a 50% chance of finding a valid value aftr 41 iterations, after 175 this value exceeds 95% and after 397 it exceeds 99%. Meaning on average, only $\frac{42}{17770}=0.002$ of the total movies in the list have to be checked in order to get a value for a user in the signature matrix.
 And even in the 1% of cases where it exceeds 397, it will still be a lot lower than 17770, and the worst case is 17470 which is still lower than the original algorithm.
@@ -156,5 +152,4 @@ BenchmarkTools.Trial: 10000 samples with 10 evaluations per sample.
 
 sum(a), sum(b), length(a), length(b)
 50094, 50094, 100000, 100000
-
 ```
