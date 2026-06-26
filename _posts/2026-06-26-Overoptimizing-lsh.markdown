@@ -53,19 +53,24 @@ The entire algorithm could then, in theory be repeated until time permits, and d
 
 # Key Insight #1: Different bands are independent of each other
 One must notice that given the algorithm, there must exist a single optimum that optimizes for $\frac{TP}{FP + FN}$, meaning there exists a single value for the number of rows in a band that must give the optimum. This then in turn means that the total number of rows must be precisely divisble by the number of bands, otherwise noise occurs by having a band that performs worse than the optimum.
+
 Then, since a single optimum exists for the number of rows and bands, one must then see that, since different bands do not interact with each other, they can be computed completely separately, in fact, the next band does not even need to be calculated before finishing the former.
 Therefore the "optimal signature matrix" can be considered a generator list that just outputs a few rows every once in a while.
+
 This saves a LOT on the memory footprint of the algorithm, at the cost of little performance (more writes to disc) and ensures that even if the program running the algorithm would crash mid-computation somewhere in band 100, then the results of 99 bands would still be yielded.
+
 This is opposite to the original idea, where a signature matrix would need to be perfected, with a certain maximum size, that is below 8 GB, and also able to finish within 30 minutes.
+
 This new proposal abolishes this by generating the optimized rows, and giving the garbage collector (GC) the chance to remove unnecessary data still in memory.
 Ensuring that the memory footprint will always be well below the 8GB, and a new band can "greedily" be generated until time is up, instead of waiting patiently for the program to finish all the different bands at once.
 
-[](/assets/iterative_sensitive_hashing.png){: .image-left}
+![](/assets/iterative_sensitive_hashing.png){: .image-left}
 
 # Key Insight #2: Minhashing can be performed a lot faster given the specifics of the data
 The original algorithm for minhashing attempts to fidn the minimum in a list of values (based on the movies), for each user, for each permutation.
 For 100 users and 1,000 movies, this means looping over 100,000 values for each permutation regardless of how many movies a user has watched.
-This is pretty wastefull since only a single value needs to be returned for each user per permutation, and as long as the same value would have been returned by the "algorithm" it can be replaced by something better.
+
+This is pretty wasteful since only a single value needs to be returned for each user per permutation, and as long as the same value would have been returned by the "algorithm" it can be replaced by something better.
 Here we abuse some feature of the data, and also probability theory, in particular with the following: given a list of $x$ positives and $y$ negatives, what is the probability of finding a single positive value after $i$ iterations?
 
 ```
@@ -88,7 +93,7 @@ permutation_sorted = [2, 3, 1]
 If one were to use the `permutation_sorted` they would know that, when they find a positive value (i.e. the user has watched this movie in the permutation) then the found value must be the minimum.
 Now, you should also notice that the values that are present in both lists are identical, meaning that the second is also just a permutation of the data, meaning that we can just interpret the first permutation as though it is the second! Now, we getting those nice properties of probability
 
-[](/assets/signature_matrix_creation.png){: .image-left }
+![](/assets/signature_matrix_creation.png){: .image-left }
 
 ```
 Original
@@ -111,7 +116,7 @@ BenchmarkTools.Trial: 26 samples with 1 evaluation per sample.
 
  Memory estimate: 5.56 MiB, allocs estimate: 23
 ```
-A speedup of at least 60(!).
+A speedup of at least 60 times(!).
 
 
 # Micro Optimization #1: using Booleans
